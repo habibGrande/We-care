@@ -14,6 +14,7 @@
 .second-nav-bar {
     display: flex;
     flex-direction: row;
+    background-color: #FFFFFF;
 }
 
 .second-nav-bar ul li {
@@ -43,4 +44,31 @@
 .slider-img {
     width: 100vw;
     height: 25vw;
+}
+.why-section{
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.why-cards {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+
+.why-h1 {
+    font-family: Merriweather,sans-serif!important;
+    text-align: center;
+    margin-top: 20px;
+    color: #315B6F;
+}
+
+.card-span{
+    font-family: Merriweather,sans-serif!important;
+}
+
+.where-img {
+    height: 15vw;
 }
