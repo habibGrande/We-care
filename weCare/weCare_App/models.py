@@ -1,14 +1,34 @@
 from django.db import models
-
+import re
 # Create your models here.
+class PatientManager(models.Manager):
+    def basic_validator(self, postData):
+        errors = {}
+        EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
+        if(len(postData['first_name']) < 2):
+            errors['first_name'] = "First Name should be at least 2 characters!"
+        if(len(postData['last_name']) < 2):
+            errors['last_name'] = "Last Name should be at least 2 characters!"
+        if not EMAIL_REGEX.match(postData['email']):    
+            errors['email'] = "Invalid email address!"
+        if len(postData['password']) < 8:
+            errors['password'] = "Password should be at least 8 characters"
+        if postData['password'] != postData['confrim_password']:
+            errors['con-password'] = "Passwords should be matched"
+        if(len(postData['phone_number']) < 10):
+            errors['phone_number'] = "Phone Number should be at least 10 digits"
+        return errors
+    
+    def login_validator(self, postData):
+        errors = {}
+        EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
+        if not EMAIL_REGEX.match(postData['email']):     
+            errors['email'] = "Invalid email address!"
+        if len(postData['password']) < 8:
+            errors['password'] = "Password should be at least 8 characters!"
+        return errors
 
 
-class Feedback(models.Model):
-    title = models.CharField(max_length=30)
-    description = models.CharField(max_length=255)
-    date = models.DateField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
 class Patient(models.Model):
     first_name = models.CharField(max_length=45)
@@ -17,7 +37,15 @@ class Patient(models.Model):
     password = models.CharField(max_length=45)
     gender = models.CharField(max_length=10)
     phone = models.CharField(max_length=15)
-    patient = models.ForeignKey(Feedback, related_name='patient',on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    objects = PatientManager()
+
+class Feedback(models.Model):
+    title = models.CharField(max_length=30)
+    description = models.CharField(max_length=255)
+    date = models.DateField()
+    patient = models.ForeignKey(Patient, related_name='feedback',on_delete=models.CASCADE,null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

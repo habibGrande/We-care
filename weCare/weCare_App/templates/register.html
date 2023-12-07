@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">  
+
+</head>
+<body>
+    <div>
+        <h1>We Care</h1>
+        <div>
+            <div>
+                <div>
+                    <p>Create a new accountIt’s</p>
+                </div>
+                <div>
+                    <p>quick and easy.</p>
+                </div>
+            </div>
+            <div>
+                <form action="/register" method="post">
+                    {% csrf_token %}
+                    <div>
+                        <input type="text" name="first_name" id="" placeholder="First Name">
+                        <input type="text" name="last_name" id=""placeholder="Last Name">
+                    </div>
+                    <div>
+                        <input type="email" name="email" placeholder="Email address">
+                    </div>
+                    <div>
+                        <input type="text" name="phone_number" id="" placeholder="Phone Number">
+                    </div>
+                    <div>
+                        <input type="password" name="password" id="" placeholder="Password">
+                    </div>
+                    <div>
+                        <input type="password" name="confrim_password" id="" placeholder="Confarim Password">
+                    </div>
+                    <div>
+                        <input type="date" name="bDate">
+                    </div>
+                    <div>
+                        <label>Gender</label>
+                    </div>
+                    <div>
+                        <label>Male</label>
+                        <input type="radio" name="gender" id="" value="male">
+                        <label>Female</label>
+                        <input type="radio" name="gender" id=""value="female">
+                    </div>
+                    <div>
+                        <button>Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
