@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We Care</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    {% load static %}
+    </head>
+<body>
+    <div class="main-container">
+        <div class="nav-bars">
+            <nav class="first-nav navbar-expand-lg navbar-light bg-light">
+                <ul>
+                    <li><a href="#">About US</a></li>
+                    <li><a href="#">Contact US</a></li>
+                    <li><a href="#">Feedback</a></li>
+                </ul>
+            </nav>
+            <nav class="second-nav navbar-expand-lg navbar-light bg-light">
+                <ul>
+                    <li>
+                        <div>
+                            <a href=""><img src="" alt=""></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a href=""><img src="" alt=""></a>
+                            <a href="">Hospitals</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a href=""><img src="" alt=""></a>
+                            <a href="">Doctors</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a href=""><img src="" alt=""></a>
+                            <a href="">Specialities</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a href=""><img src="" alt=""></a>
+                            <a href="">Book an Appointment</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="slider">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="{% static '/images/slider-images/slider-img1.jpeg' %}"  alt="slider-img1" style="width:100%; height:400px;">
+                    </div>
+                
+                    <div class="item">
+                        <img src="{% static '/images/slider-images/slider-img1.jpeg' %}"  alt="img3" style="width:100%; height:400px;">
+                    </div>
+                    
+                    <div class="item">
+                        <img src="{% static '/images/slider-images/slider-img1.jpeg' %}" alt="img4" style="width:100%; height:400px;">
+                    </div>
+                </div>
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        <div class="why">
+            <h1>Why We Care Group</h1>
+            <div class="reason">
+                <img class="why-img" src="{% static '/images/why-images/why-imag-1.jpeg' %}" alt="" style="width: 150px; height: 300px;">
+                <span class="title">Leading Doctors</span>
+                <p class="wyh-p">A pool of over 1400 doctors to provide you modern and world class treatment.</p>
+                <a  class="why-a" href="#">Doctors Page</a>
+            </div>
+            <div class="reason">
+                <img class="why-img" src="{% static '/images/why-images/why-imag-1.jpeg' %}" alt="" style="width: 150px; height: 300px;">
+                <span class="title">Leading Doctors</span>
+                <p class="wyh-p">A pool of over 1400 doctors to provide you modern and world class treatment.</p>
+                <a  class="why-a" href="#">Doctors Page</a>
+            </div>
+            <div class="reason">
+                <img class="why-img" src="{% static '/images/why-images/why-imag-1.jpeg' %}" alt="" style="width: 150px; height: 300px;">
+                <span class="title">Leading Doctors</span>
+                <p class="wyh-p">A pool of over 1400 doctors to provide you modern and world class treatment.</p>
+                <a  class="why-a" href="#">Doctors Page</a>
+            </div>
+        </div>
+        <div class="awards">
+            <h1>Why We Care Group</h1>
+            <div class="award">
+                <img class="why-img" src="{% static '/images/why-images/why-imag-1.jpeg' %}" alt="" style="width: 150px; height: 300px;">
+                <span class="title">Award Title</span>
+            </div>
+            <div class="award">
+                <img class="why-img" src="{% static '/images/why-images/why-imag-1.jpeg' %}" alt="" style="width: 150px; height: 300px;">
+                <span class="title">Award Title</span>
+            </div>
+            <div class="award">
+                <img class="why-img" src="{% static '/images/why-images/why-imag-1.jpeg' %}" alt="" style="width: 150px; height: 300px;">
+                <span class="title">Award Title</span>
+            </div>
+        </div>
+        <div class="patient-experience">
+            <h1>Patient Experiences</h1>
+            <h4>Our patients are our best advocates, hear the inspiring stories of their treatment journey with We CARE Group.</h4>
+            <img src="" alt="">
+        </div>
+        <div class="footers">
+            <footer class="footer-list">
+                <a href=""><img class="footer-icon" src="{% static '/images/footer-icons/fb-icon.jpeg' %}" alt="" style="width: 30px; height: 30px;"></a>
+                <a href=""><img class="footer-icon" src="{% static '/images/footer-icons/in-icon.jpg' %}" alt="" style="width: 30px; height: 30px;"></a>
+                <a href=""><img class="footer-icon" src="{% static '/images/footer-icons/li-icon.png' %}" alt="" style="width: 30px; height: 30px;"></a>
+                <a href=""><img class="footer-icon" src="{% static '/images/footer-icons/tw-icon.webp' %}" alt="" style="width: 30px; height: 30px;"></a>
+                <a href=""><img class="footer-icon" src="{% static '/images/footer-icons/yt-icon.png' %}" alt="" style="width: 30px; height: 30px;"></a>
+            </footer>
+            <footer class="footer-list">
+                <div class="footer-item">
+                    <span>Copyright © We Care Group - All Rights Reserved</span>
+                </div>
+                <div class="footer-item">
+                    <span>Feedback.</span>
+                    <span>Privacy policy.</span>
+                    <span>Grievance</span>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
