@@ -4,28 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
 </head>
 <body>
-    <div>
-        <p>We Care</p>
+    <div class="login-header">
+        <h1>We Care</h1>
     </div>
-    <div>
+    <div class="login-header">
         <form action="/login" method="post">
             {% csrf_token %}
             <div>Log Into We Care</div>
             <div>
-                <input type="text" placeholder="Email" name="email">
+                <input type="text" placeholder="Email" name="email" >
             </div>
-            <div>
-                <input type="password" placeholder="Password" name="password">
+            <div >
+                <input type="password" placeholder="Password" name="password" >
             </div>
+            <div class="login-btn">
+                <button class="btn btn-primary " >Log In</button>
+            </div> 
             <div>
-                <button>Log In</button>
+                <p><a href="/register/page" >Create an account</a></p>
             </div>
         </form>   
-        <div>
-            <p><a href="">Create an account</a></p>
-        </div>
+   
     </div>
 </body>
 </html>
