@@ -1,0 +1,74 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.nav-1 {
+    background-color: #06B0C1;
+}
+
+.nav-ul li  a {
+    color: white;
+}
+
+.second-nav-bar {
+    display: flex;
+    flex-direction: row;
+    background-color: #FFFFFF;
+}
+
+.second-nav-bar ul li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #204E63;
+    font-size: 16px;
+    
+}
+
+.second-nav-bar ul li a {
+    color: #204E63;
+}
+
+.second-nav-icon {
+    height: 20px;
+    width: 20px;
+}
+
+.second-nav-main-icon {
+    height: 60px;
+    width: 60px;
+
+}
+
+.slider-img {
+    width: 100vw;
+    height: 25vw;
+}
+.why-section{
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.why-cards {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+
+.why-h1 {
+    font-family: Merriweather,sans-serif!important;
+    text-align: center;
+    margin-top: 20px;
+    color: #315B6F;
+}
+
+.card-span{
+    font-family: Merriweather,sans-serif!important;
+}
+
+.where-img {
+    height: 15vw;
+}
