@@ -1,0 +1,18 @@
+* {
+    font-family: 'Lato', sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.second-nav-bar .platform-icon .second-nav-main-icon {
+    height: 60px;
+    width: 60px;
+
+}
+
+.second-nav-bar  h1 {
+    color: #053D54;
+    display: flex;
+    margin:0 auto;
+}
+
