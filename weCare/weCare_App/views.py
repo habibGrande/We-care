@@ -7,6 +7,7 @@ import bcrypt
 def root(request):
     return render(request, 'landingpage.html')
 
+
 def register_page(request):
     return render(request,'register.html')
 
