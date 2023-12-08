@@ -1,72 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Landing Page</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static '/style/main.css' %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Merriweather+Sans:wght@400;800&family=Open+Sans&display=swap" rel="stylesheet">
-    <!-- Latest compiled and minified CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Latest compiled JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</head>
-<body>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+      <title>Landing Page</title>
+      {% load static %}
+      <link rel="stylesheet" href="{% static '/style/main.css' %}">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Open+Sans&display=swap" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Merriweather+Sans:wght@400;800&family=Open+Sans&display=swap" rel="stylesheet">
+      <!-- Latest compiled and minified CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Latest compiled JavaScript -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Merriweather+Sans:wght@400;800&family=Open+Sans&family=Playfair+Display:wght@400;900&display=swap" rel="stylesheet">
+      <!-- Add icon library -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy6p5llPbS+rtJOf+83OUGpTIbrIuG4Ffe" crossorigin="anonymous">
+      <!-- CSS Files -->
+    </head>
+  <body>
     <nav class="navbar navbar-expand-lg nav-1">
-        <div class="container-fluid">
+      <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-ul">
-              <li class="nav-item">
-                <a class="nav-link " href="#">Feedback</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contact Us</a>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+              <ul class="navbar-nav me-auto mb-4 mb-lg-0 nav-ul">
+                  <li class="nav-item d-flex">
+                      <a class="nav-link" href="#">Feedback</a>
+                  </li>
+                  <li class="nav-item d-flex">
+                      <a class="nav-link" href="#">About Us</a>
+                  </li>
+                  <li class="nav-item d-flex">
+                      <a class="nav-link" href="#">Contact Us</a>
+                  </li>
+                  <li class="nav-item flm-li flm-li-call">
+                    <a class="nav-link flm-a" href="tel:+91-40 6165 6565">
+                        <span>
+                            <img src="https://www.carehospitals.com/assets/images/main/ch-phoneicon.svg" alt="phone icon" height="16" width="16">
+                        </span>
+                        <span id="header2-phone">+972-599 616 656</span>
+                    </a>
+                </li>                
+              </ul>
+              <form class="d-flex">
+                  <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
           </div>
-        </div>
-      </nav>
-      <nav class="second-nav-bar navbar navbar-expand-lg sticky-top">
-        <div class="container-fluid">
-            <div class="platform-icon">
-                <img  class="second-nav-main-icon" src="{% static '/images/second-nav-icons/WecareLogo.png' %}" alt="">
-            </div>
-            <div class="collapse navbar-collapse d-flex flex-row-reverse" id="navbarNav">
-                <ul class="navbar-nav">
-                <li class="nav-item d-flex">
-                    <img  class="second-nav-icon" src="{% static '/images/second-nav-icons/hospital.png' %}" alt="">
-                    <a class="nav-link" aria-current="page" href="#">Hospitals</a>
-                </li>
-                <li class="nav-item d-flex">
-                    <img class="second-nav-icon" src="{% static '/images/second-nav-icons/doctor.png' %}"alt="">
-                    <a class="nav-link" href="#">Doctors</a>
-                </li>
-                <li class="nav-item d-flex">
-                    <img class="second-nav-icon" src="{% static '/images/second-nav-icons/stethoscope.png' %}" alt="">
-                    <a class="nav-link" href="#">Specialities</a>
-                </li>
-                <li class="nav-item d-flex">
-                    <img class="second-nav-icon" src="{% static '/images/second-nav-icons/calendar.png' %}" alt="">
-                    <a class="nav-link" href="#">Book an Appointment</a>
-                </li>
-                </ul>
+      </div>
+  </nav>
+  
+  <nav class="second-nav-bar navbar navbar-expand-lg sticky-top">
+      <div class="container-fluid">
+          <div class="platform-icon">
+              <span class="logo-text">We</span>
+              <img  class="second-nav-main-icon" src="{% static '/images/second-nav-icons/WecareLogo.png' %}" alt="" style="margin: 0px; padding: 0px;">
+              <span class="logo-text">Care</span>
           </div>
-        </div>
-    </nav>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse d-flex flex-row-reverse" id="navbarNav">
+              <ul class="navbar-nav justify-space-between">
+                  <li class="nav-item d-flex">
+                    <span class="icon feature_box_col_two"><i class="fa fa-hospital-o" aria-hidden="true"></i></span>
+                      <a class="nav-link" aria-current="page" href="#">Hospitals</a>
+                  </li>
+                  <li class="nav-item d-flex">
+                    <span class="icon feature_box_col_four"><i class="fa fa-user-md" aria-hidden="true"></i></span>
+                      <a class="nav-link" href="#">Doctors</a>
+                  </li>
+                  <li class="nav-item d-flex">
+                      <span class="icon feature_box_col_three"><i class="fa fa-stethoscope" aria-hidden="true"></i></span>
+                      <a class="nav-link" href="#">Specialities</a>
+                  </li>
+                  <li class="nav-item d-flex">
+                      <span class="icon feature_box_col_one"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                      <a class="nav-link" href="#">Book an Appointment</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+  
+
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -75,24 +101,24 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="slider-img"  src="{% static '/images/slider-images/slider-img7.jpeg' %}"class="d-block w-100" alt="...">
+            <img class="slider-img"  src="{% static '/images/slider-images/slider-img2.jpeg' %}"class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
-              <p>Some representative placeholder content for the first slide.</p>
+              <h5>Welcome to Our Wellness Center</h5>
+              <p>Experience a healthier tomorrow with our comprehensive range of medical services.</p>
             </div>
           </div>
           <div class="carousel-item">
-            <img  class="slider-img" src="{% static '/images/slider-images/slider-img6.jpeg' %}" class="d-block w-100" alt="...">
+            <img  class="slider-img" src="{% static '/images/slider-images/slider-img20.png' %}" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
-              <p>Some representative placeholder content for the second slide.</p>
+              <h5>Quality Care, Personalized for You</h5>
+              <p>Committed to delivering quality care with a human touch, because your health matters.</p>
             </div>
           </div>
           <div class="carousel-item">
-            <img  class="slider-img" src="{% static '/images/slider-images/slider-img5.jpeg' %}"class="d-block w-100" alt="...">
+            <img  class="slider-img" src="{% static '/images/slider-images/slider-img16.jpeg' %}"class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>Some representative placeholder content for the third slide.</p>
+              <h5>Your Health, Our Priority</h5>
+              <p>Our team of dedicated professionals is here to ensure your health and happiness.</p>
             </div>
           </div>
         </div>
@@ -104,59 +130,451 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
-      </div>
-      <div class="why-section">
-        <h1 class="why-h1">Why We Care</h1>
+    </div>
+
+    <div class="why-section d-none d-sm-block">
+        <h1 class="text-center h1-style">Why We Care</h1>
         <div class="why-cards">
-          <div class="card" style="width: 25rem;">
-            <img src="{% static '/images/why-images/why-img1.jpg' %}" class="card-img-top" alt="...">
+          <div class="card why-card" >
+            <div class="image-wrapper">
+              <img src="{% static '/images/why-images/why-img1.jpg' %}"  alt="...">
+            </div>
             <div class="card-body">
-              <span class="card-span">Leading Doctors</span>
+              <h5 class="card-span">Leading Doctors</h5>
+              <p class="card-text">Expertise that defines excellence in medical care, forming the core of our commitment to your well-being.</p>
+            </div>
+          </div>
+          <div class="card why-card">
+            <div class="image-wrapper">
+              <img src="{% static '/images/why-images/why-img5.jpg' %}"  alt="...">
+            </div>
+            <div class="card-body">
+              <h5 class="card-span">Comprehensive Care Solutions</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
           </div>
-          <div class="card" style="width: 25rem;">
-            <img src="{% static '/images/why-images/why-img1.jpg' %}" class="card-img-top" alt="...">
+          <div class="card why-card">
+            <div class="image-wrapper">
+            <img src="{% static '/images/why-images/why-img3.jpeg' %}"  alt="...">
+            </div>
             <div class="card-body">
-              <span class="card-span">Leading Doctors</span>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="card-span">Recognition and Accreditations</h5>
+              <p class="card-text">Our commitment to the highest standards of care and safety is validated by prestigious awards and accreditations.</p>
             </div>
           </div>
-          <div class="card" style="width: 25rem;">
-            <img src="{% static '/images/why-images/why-img1.jpg' %}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <span class="card-span">Leading Doctors</span>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+    </div>
+
+    <div id="carouselExampleControls" class="carousel carousel-dark slide d-none d-sm-block" data-bs-ride="carousel">
+        <h1 class="text-center h1-style mt-4 mt-sm-0">Where We Serve</h1>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+              <div class="cards-wrapper">
+                <div class="card">
+                  <div class="image-wrapper">
+                    <img class="where-img"  src="{% static '/images/where-images/where-img1.webp' %}"  alt="...">
+                  </div>
+                  <div class="card-body">
+                    <span class="card-span">Ramallah</span>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="image-wrapper">
+                    <img class="where-img"  src="{% static '/images/where-images/where-img2.jpeg' %}"  alt="...">
+                  </div>
+                  <div class="card-body">
+                    <span class="card-span">Nablus</span>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="image-wrapper">
+                    <img class="where-img"  src="{% static '/images/where-images/where-img3.jpeg' %}"  alt="...">
+                  </div>
+                  <div class="card-body">
+                    <span class="card-span">Bethlehem</span>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item active">
+              <div class="cards-wrapper">
+                <div class="card">
+                  <div class="image-wrapper">
+                    <img class="where-img"  src="{% static '/images/where-images/where-img4.jpeg' %}"  alt="...">
+                  </div>
+                  <div class="card-body">
+                    <span class="card-span">Hebron</span>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="image-wrapper">
+                    <img class="where-img"  src="{% static '/images/where-images/where-img5.jpeg' %}"  alt="...">
+                  </div>
+                  <div class="card-body">
+                    <span class="card-span">Tulkarm</span>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="image-wrapper">
+                    <img class="where-img"  src="{% static '/images/where-images/where-img6.jpeg' %}"  alt="...">
+                  </div>
+                  <div class="card-body">
+                    <span class="card-span">Tubas</span>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item active">
+              <div class="cards-wrapper">
+                <div class="card">
+                  <div class="image-wrapper">
+                    <img class="where-img"  src="{% static '/images/where-images/where-img7.jpeg' %}"  alt="...">
+                  </div>
+                  <div class="card-body">
+                    <span class="card-span">Jenin</span>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="image-wrapper">
+                    <img class="where-img"  src="{% static '/images/where-images/where-img8.jpeg' %}"  alt="...">
+                  </div>
+                  <div class="card-body">
+                    <span class="card-span">Qalqilya</span>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="image-wrapper">
+                    <img class="where-img"  src="{% static '/images/where-images/where-img9.jpeg' %}"  alt="...">
+                  </div>
+                  <div class="card-body">
+                    <span class="card-span">Jericho</span>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div id="carouselExampleInterval" class="carousel slide carousel-dark" data-bs-ride="carousel">
+      <h1 class="text-center h1-style">Our Patient Experiences</h1>
+      <h5 class="text-center h1-style">Our patients are our best advocates, hear the inspiring stories of their treatment journey with We CARE Hospitals.</h5>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <div class="cards-wrapper">
+            <div class="card">
+              <div class="image-wrapper d-flex justify-content-center align-items-center">
+                <img  class="p-img img-fluid" src="{% static '/images/patient-ex-images/p1.avif' %}"  alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="rating-stars">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="image-wrapper d-flex justify-content-center align-items-center">
+                <img class="p-img img-fluid" src="{% static '/images/patient-ex-images/p2.avif' %}"  alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="rating-stars">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="image-wrapper d-flex justify-content-center align-items-center">
+                <img class="p-img img-fluid" src="{% static '/images/patient-ex-images/p3.avif' %}" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="rating-stars">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <div class="cards-wrapper">
+            <div class="card">
+              <div class="image-wrapper d-flex justify-content-center align-items-center">
+                <img class="p-img img-fluid" src="{% static '/images/patient-ex-images/p4.avif' %}" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="rating-stars">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="image-wrapper d-flex justify-content-center align-items-center">
+                <img class="p-img img-fluid" src="{% static '/images/patient-ex-images/p5.avif' %}" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="rating-stars">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="image-wrapper d-flex justify-content-center align-items-center">
+                <img class="p-img img-fluid" src="{% static '/images/patient-ex-images/p2.avif' %}" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="rating-stars">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="cards-wrapper">
+            <div class="card">
+              <div class="image-wrapper d-flex justify-content-center align-items-center">
+                <img class="p-img img-fluid" src="{% static '/images/patient-ex-images/p2.avif' %}" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="rating-stars">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="image-wrapper d-flex justify-content-center align-items-center">
+                <img class="p-img img-fluid" src="{% static '/images/patient-ex-images/p2.avif' %}" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="rating-stars">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="image-wrapper d-flex justify-content-center align-items-center">
+                <img class="p-img img-fluid" src="{% static '/images/patient-ex-images/p2.avif' %}" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="rating-stars">
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="why-section">
-        <h1 class="why-h1">Where We Serve</h1>
-        <div class="why-cards">
-          <div class="card" style="width: 25rem;">
-            <img class="where-img"  src="{% static '/images/where-images/where-img1.webp' %}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <span class="card-span">Ramallah</span>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <div class="pt-5 pb-5">
+      <div class="container">
+        <div class="row">
+          <div class="section-head col-sm-12">
+            <h1 class="text-center h1-style">Why Choose Us?</h1>
+            <p>Choose We Care as your preferred healthcare platform for a seamless and reliable experience in Palestine.</p>
+          </div>
+          <div class="col-lg-3 col-sm-3">
+            <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+              <h6>Book An Appointment</h6>
+              <p> Our website offers a seamless appointment booking service, connecting you with top-notch doctors in just a few clicks. Say goodbye to long waiting times and hello to convenience!</p>
             </div>
           </div>
-          <div class="card" style="width: 25rem;">
-            <img  class="where-img" src="{% static '/images/where-images/where-img2.jpeg' %}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <span class="card-span">Nablus</span>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <div class="col-lg-3 col-sm-3">
+            <div class="item"> <span class="icon feature_box_col_two"><i class="fa fa-hospital-o" aria-hidden="true"></i></span>
+              <h6>Explore Hospitals</h6>
+              <p>Embarking on a journey to find the right hospital for your needs? Look no further! Our website simplifies the process of navigating hospitals, ensuring you find the best care without the hassle.</p>
             </div>
           </div>
-          <div class="card" style="width: 25rem;">
-            <img class="where-img"  src="{% static '/images/where-images/where-img3.jpeg' %}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <span class="card-span">Bethlehem</span>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <div class="col-lg-3 col-sm-3">
+            <div class="item"> <span class="icon feature_box_col_three"><i class="fa fa-stethoscope" aria-hidden="true"></i></span>
+              <h6>Explore Specialities</h6>
+              <p>Dive into a diverse range of medical fields, from cardiology to dermatology, empowering yourself with knowledge for informed health decisions. Your well-being, your choice—explore today!"</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-3">
+            <div class="item"> <span class="icon feature_box_col_four"><i class="fa fa-user-md" aria-hidden="true"></i></span>
+              <h6>Find A Doctor</h6>
+              <p>Find your ideal healthcare!Tailor your search for a doctor who understands, ensuring a personalized and comforting experience. Your well-being, perfectly matched."</p>
             </div>
           </div>
         </div>
       </div>
-      <!-- test -->
-</body>
+    </div>
+    
+    <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+      <!-- Section: Social media -->
+      <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+          <!-- Left -->
+          <div class="footer-social-media-left me-5 d-none d-lg-block">
+              <span>Get connected with us on social networks:</span>
+          </div>
+          <!-- Left -->
+  
+          <!-- Right -->
+          <div class="footer-social-media-right">
+              <a href="#" class="me-4 text-reset social-media-icon">
+                  <i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="me-4 text-reset social-media-icon">
+                  <i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="me-4 text-reset social-media-icon">
+                  <i class="fa fa-fw fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="me-4 text-reset social-media-icon">
+                  <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i>
+              </a>
+          </div>
+          <!-- Right -->
+      </section>
+      <!-- Section: Social media -->
+  
+      <!-- Section: Links  -->
+      <section class="">
+          <div class="container text-center text-md-start mt-5">
+              <!-- Grid row -->
+              <div class="row mt-3">
+                  <!-- Grid column -->
+                  <div class="col-md-3 mx-auto mb-3">
+                      <!-- Content -->
+                      <h6 class="text-uppercase fw-bold mb-3">
+                          About Us
+                      </h6>
+                      <p>
+                        Welcome to WeCare – where health meets compassion. Our mission is to redefine healthcare with comprehensive services that enhance well-being. Committed to excellence, we prioritize integrity, empathy, and innovation in delivering top-tier medical care to individuals and communities.
+                      </p>
+                  </div>
+                  <!-- Grid column -->
+  
+                  <!-- Grid column -->
+                  <div class="col-md-3 mx-auto mb-3">
+                      <!-- Links -->
+                      <h6 class="text-uppercase fw-bold mb-3">
+                          Our Services
+                      </h6>
+                      <p>
+                          <a href="#" class="text-reset">Book An Appointment</a>
+                      </p>
+                      <p>
+                          <a href="#" class="text-reset">Explore Hospitals</a>
+                      </p>
+                      <p>
+                          <a href="#" class="text-reset">Explore Specialities</a>
+                      </p>
+                      <p>
+                        <a href="#" class="text-reset">Find A Doctor</a>
+                    </p>
+                  </div>
+                  <!-- Grid column -->
+  
+                  <!-- Grid column -->
+                  <div class="col-md-3 mx-auto mb-3">
+                      <!-- Links -->
+                      <h6 class="text-uppercase fw-bold mb-3">
+                          Contact Us
+                      </h6>
+                      <p><i class="fa fa-fw fa-location-arrow" aria-hidden="true"></i> Ramllah, P606, Palestine</p>
+                      <p>
+                        <i class="fa fa-fw fa-at" aria-hidden="true"></i>
+                          wecare@mail.com
+                      </p>
+                      <p><i class="fa fa-fw fa-phone" aria-hidden="true"></i> + 02 234 5679</p>
+                      <p><i class="fa fa-fw fa-phone" aria-hidden="true"></i> + 972-599 616 656</p>
+                  </div>
+                  <!-- Grid column -->
+              </div>
+              <!-- Grid row -->
+          </div>
+      </section>
+      <!-- Section: Links  -->
+  
+      <!-- Copyright -->
+      <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+          © 2023 Copyright:
+          <a class="text-reset fw-bold" href="https://mdbootstrap.com/">WeCare.com</a>
+      </div>
+      <!-- Copyright -->
+  </footer>
+  
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-eUHqVl5h4QlVM+5n5cDJ0WbB4lU8+FIR7IeZ1n6IAC5y2zT4bDRAx4z2I8FqHjNU" crossorigin="anonymous"></script>
+  </body>
 </html>
