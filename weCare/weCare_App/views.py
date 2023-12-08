@@ -5,7 +5,7 @@ import bcrypt
 # Create your views here.
 
 def root(request):
-    return render(request, 'new.html')
+    return render(request, 'index.html')
 
 def register_page(request):
     return render(request,'register.html')
