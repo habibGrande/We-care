@@ -26,15 +26,16 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
       <!-- Bootstrap Timepicker CSS -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.min.css">
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     </head>
   <body>
   <nav class="second-nav-bar navbar navbar-expand-lg sticky-top">
       <div class="container-fluid">
-          <div class="platform-icon">
+          <a class="platform-icon" href="/" style="text-decoration: none; color: #053D54">
               <span class="logo-text">We</span>
               <img  class="second-nav-main-icon" src="{% static '/images/second-nav-icons/WecareLogo.png' %}" alt="" style="margin: 0px; padding: 0px;">
               <span class="logo-text">Care</span>
-          </div>
+          </a>
           <h1>Book an Appointment</h1>
       </div>
   </nav>
@@ -77,10 +78,7 @@
         <label for="timeField">Time:</label>
         <input type="time" class="form-control timepicker" id="timeField" name="time">
       </div>
-  
-      <button type="submit" class="btn btn-primary" style="background-color: #06B0C1;">Book</button>
-      <button type="submit" class="btn btn-primary" style="background-color: #06B0C1;">Reset</button>
-
+      <button type="submit" class="btn btn-primary" style="background-color: #06B0C1; border: 1px solid  #06B0C1;">Book Now</button>
     </form>
   </div>
   
