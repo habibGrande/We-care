@@ -2,11 +2,10 @@ from django.shortcuts import redirect, render
 from django.contrib import messages
 from .models import *
 import bcrypt
-
+# Create your views here.
 
 def root(request):
     return render(request, 'landingpage.html')
-
 
 def register_page(request):
     return render(request,'register.html')
@@ -60,10 +59,9 @@ def login(request):
         messages.error(request,"Patient is not Exist")
     return redirect('/')
 
-def book_an_appointment(request):
-    return render (request,'bookanappointment.html')
-
 def logout(request):
     del request.session['id']
     return redirect("/")
 
+def book_an_appointment(request):
+    return render(request,'bookanappointment.html')
