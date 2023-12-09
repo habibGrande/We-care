@@ -5,12 +5,9 @@ import bcrypt
 
 
 def root(request):
-<<<<<<< HEAD
-    return render(request, 'new.html')
-=======
     return render(request, 'landingpage.html')
 
->>>>>>> 0520194916fd213b151921fbb7a4f9d5b1506c3a
+
 
 def register_page(request):
     return render(request,'register.html')
