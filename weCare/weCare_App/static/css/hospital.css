@@ -84,30 +84,26 @@
     -o-transition: all 1s ease;
     -ms-transition: all 1s ease;
   }
-  .card{
+ .card{
     --bs-border-radius: 1rem !important;
-    height: 700px !important;
+    height: 600px !important;
     margin-bottom: 30px !important;
-    border: none !important;
-    box-shadow: 2px 0px 10px #06b0c1 !important;
-    color: #063d54 !important;
-    
- } 
+ }
  .card-body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
- } 
+ }
 
-  .card-img-top{
+ .card-img-top{
     height: 12vw !important;
-    
- } 
 
-  /* .justify-content-lg-between {
+ }
+
+  .justify-content-lg-between {
     justify-content: space-between!important;
     margin-top: 30px;
-}  */
+}
 
 .text-center{
     margin-top: 20px !important;
