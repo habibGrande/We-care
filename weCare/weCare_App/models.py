@@ -1,5 +1,6 @@
 from django.db import models
 import re
+
 # Create your models here.
 class PatientManager(models.Manager):
     def basic_validator(self, postData):
