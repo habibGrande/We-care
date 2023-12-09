@@ -1,87 +1,92 @@
-body{
-    background-color: #f5f5f5;
-}
-.nav{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    background-color: #00b6bd;
-}
-.nav-items{
-    color: white;
-    padding: 10px;
-    text-decoration: none;
-}
-.nav-links{
-    padding: 5px;
-}
-.sticky-nav{
-    position: sticky;
-    display: flex;
-    height: 45px;
-    align-items: center;
-    justify-content: flex-end;
-    background-color:white;
+
+/* this css for hospital page */
+
+*{
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .btn-outline-success{
+    --bs-btn-color: white !important;
+    --bs-btn-hover-bg:  black !important;
+    --bs-btn-border-color: #fff !important;
+
+  }
+  
+  .nav-1 {
+      background-color: #06B0C1;
+  }
+  
+  .nav-ul li  a {
+      color: white;
+  }
+  
+  .second-nav-bar {
+      display: flex;
+      flex-direction: row;
+  }
+  
+  .second-nav-bar ul li {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      color: #204E63;
+      font-size: 16px;
+  
+  }
+  
+  .second-nav-bar ul li a {
+      color: #204E63;
+  }
+  
+  .second-nav-icon {
+      height: 20px;
+      width: 20px;
+  }
+  
+  .second-nav-main-icon {
+      height: 60px;
+      width: 60px;
+  
+  }
+  
+  .slider-img {
+      width: 100vw;
+      height: 25vw;
+  }
+
+  
+.countenir{
+    width: 100%;
+    margin: 0px auto;
+   
 }
 
-.sticky-nav-content{
+/* css for doc page */
+
+.w-100{
+    height: 800px;
+    margin-bottom: 30px;
+}
+
+.doc_cards{
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 5px;
-}
-.sticky-nav-items{
-    color: #212529;
-    padding: 10px;
-    text-decoration: none;
 }
 
-.feedback-title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.feedback-text{
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.feedback-desc{
-    width: 480px;
-    height: 180px;
+.btn-primary,
+.btn-primary:active,
+.btn-primary:visited {
+  background-color: #06b0c1 !important;
+  border-color: #06b0c1 !important;
 }
 
-.container-btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 15px;
-}
-
-.feedback-btn{
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    color: azure;
-    width: 85px;
-    height: 30px;
-    border-radius: 0%;
-    box-shadow: 2px 2px 1px black;
-    background-color: #00b6bd;
-
-}
-
-.title-control{
-    margin-top: 20px;
-}
-
-.login-header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.login-btn{
-    margin-top: 5px;
-}
+.btn-primary:hover {
+    background-color: black !important;
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+  }
+ .card{
+    --bs-border-radius: 5.375rem !important;
+ }
