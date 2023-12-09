@@ -12,5 +12,5 @@ urlpatterns = [
     path('feedback', views.feedBack),
     path('destroy', views.logout),
     path('login', views.login),
-    path('bookanappointment',views.book_an_appointment),
+    path('bookanappointment',views.book_an_appointment)
 ]
