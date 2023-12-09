@@ -5,7 +5,7 @@ import bcrypt
 # Create your views here.
 
 def root(request):
-    return render(request, 'index.html')
+    return render(request, 'landingpage.html')
 
 def register_page(request):
     return render(request,'register.html')
@@ -62,3 +62,6 @@ def login(request):
 def logout(request):
     del request.session['id']
     return redirect("/")
+
+def book_an_appointment(request):
+    return render(request,'bookanappointment.html')
