@@ -2,6 +2,15 @@ from django.shortcuts import redirect, render
 from django.contrib import messages
 from .models import *
 import bcrypt
+
+def specialities(request):
+    return render(request,"specialities.html")
+
+def hospitals(request):
+    return render(request,"hospital.html")
+
+def doctors(request):
+    return render(request,"dr_page.html")
 # Create your views here.
 
 def root(request):
