@@ -46,7 +46,7 @@ class Feedback(models.Model):
     title = models.CharField(max_length=30)
     description = models.CharField(max_length=255)
     date = models.DateField()
-    patient = models.ForeignKey(Patient, related_name='feedback',on_delete=models.CASCADE,null=True)
+    patient = models.ForeignKey(Patient, related_name='feedback',on_delete=models.CASCADE, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -75,7 +75,7 @@ class Appointment(models.Model):
     date = models.DateField()
     Time = models.TimeField()
     doctor = models.ForeignKey(Doctor,related_name='appointment', on_delete=models.CASCADE)
-    patient = models.ForeignKey(Patient,related_name='Patientppointment', on_delete=models.CASCADE)
+    patient = models.ForeignKey(Patient,related_name='Patientppointment', on_delete=models.CASCADE, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

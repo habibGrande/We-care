@@ -65,3 +65,17 @@ def logout(request):
 
 def book_an_appointment(request):
     return render(request,'bookanappointment.html')
+
+
+
+def feedback_function(request):
+    patient_id = request.session['id']
+    patient_obj = Patient.objects.get(id = patient_id)
+    feedBack = request.POST['feedback']
+    date = request.POST['date']
+    title = request.POST['title']
+    feedback = Feedback.objects.create(
+        patient = patient_obj,description = feedBack,title = title,date = date )
+    patient_obj.feedback.add(feedback)
+
+    return redirect('/feedback')
