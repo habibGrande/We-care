@@ -46,7 +46,7 @@
         <div  class="container d-flex justify-content-center" >
             <form action="/register" method="post" >
                 {% csrf_token %}
-                <div class="row">
+                <div class="row ms-lg-1">
                     <div class="col-sm-4 col-md-6 col-lg-4  mt-3">
                         <input type="text" class="form-control" name="first_name" placeholder="First name">
                         
@@ -56,32 +56,38 @@
                     </div>
                     </div>
                 
-                <div class="col-sm-8 col-md-12 col-lg-9 mt-3" >
+                <div class="col-sm-8 col-md-12 col-lg-10 mt-3" >
                     <input type="email"  class="form-control" name="email" placeholder="Email address">
                 </div>
-                <div class="col-sm-8 col-md-12 col-lg-9 mt-3">
+                <div class="col-sm-8 col-md-12 col-lg-10 mt-3">
                     <input type="text"  class="form-control" name="phone_number" id="" placeholder="Phone Number">
                 </div>
-                <div class="col-sm-8 col-md-12 col-lg-9 mt-3">
+                <div class="col-sm-8 col-md-12 col-lg-10 mt-2">
+                    <label>Profile Pictue</label>
+                </div>
+                <div class="col-sm-8 col-md-12 col-lg-10 mt-1">
+                    <input type="file"  class="form-control" name="img" id="" placeholder="Profile Pictue">
+                </div>
+                <div class="col-sm-8 col-md-12 col-lg-10 mt-3">
                     <input type="password"  class="form-control" name="password" id="" placeholder="Password">
                 </div>
-                <div class="col-sm-8 col-md-12 col-lg-9 mt-3">
+                <div class="col-sm-8 col-md-12 col-lg-10 mt-3 ">
                     <input type="password"  class="form-control"class="form-control" name="confrim_password" id="" placeholder="Confarim Password">
                 </div>
             
-                <div class="row">
+                <div class="row ms-lg-1">
                     <div class="col-sm-4 col-md-6 col-lg-4 mt-3">
                         <label>Birthday:</label>
                         <input type="date"  class="form-control mt-2" name="bDate">
                     </div>
-                    <div class="col-sm-4 col-md-6 col-lg-5 mt-3">
+                    <div class="col-sm-4 col-md-6 col-lg-6 mt-3">
                         <label >Gender: </label>
                         <div class="form-control mt-2">
                         
                             <label class="form-check-label"> Male</label>
-                            <input type="radio" class="form-check-input " name="gender" id="" value="male">
-                            <label class="form-check-label  ms-lg-3"> Female</label>
-                            <input type="radio" class="form-check-input" name="gender" id=""value="female">
+                            <input type="radio" class="form-check-input ms-lg-1" name="gender" id="" value="male">
+                            <label class="form-check-label ms-lg-4 "> Female</label>
+                            <input type="radio" class="form-check-input ms-lg-2 " name="gender" id=""value="female">
                         </div>
                     </div>
                 </div>

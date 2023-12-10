@@ -13,9 +13,10 @@ urlpatterns = [
     path('feedback/function',views.feedback_function),
     path('destroy', views.logout),
     path('login', views.login),
-    path('bookanappointment',views.book_an_appointment),
+    path('logout',views.logout),
+    path('function/book',views.function_book),
     path('book',views.book),
     path('api/fetch-hospitals/<int:doctor_id>', views.fetch_hospitals, name='fetch_hospitals'),
+    path('book_an_appointment',views.book_an_appointment)
 
-    path('bookanappointment',views.book_an_appointment)
 ]
