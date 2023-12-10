@@ -75,11 +75,7 @@ class Appointment(models.Model):
     date = models.DateField()
     Time = models.TimeField()
     doctor = models.ForeignKey(Doctor,related_name='appointment', on_delete=models.CASCADE)
-<<<<<<< HEAD
-    patient = models.ForeignKey(Patient,related_name='Patientppointment', null=True ,on_delete=models.CASCADE)
-=======
     patient = models.ForeignKey(Patient,related_name='Patientppointment', on_delete=models.CASCADE, null=True)
->>>>>>> fa5b49390f1eb949561ae7a9276bbbaddd14b3c3
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
