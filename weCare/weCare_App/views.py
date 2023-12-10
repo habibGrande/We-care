@@ -75,7 +75,14 @@ def loginPage(request):
         messages.error(request,"Patient is not Exist")
     return redirect('/')
 
-
+def book_an_appointment(request):
+    all_specialities =  Speciality.objects.all()
+    all_hosptials = Hospital.objects.all()
+    all_doctors = Doctor.objects.all()
+    print ("am here")
+    print( all_specialities)
+    context = {'all_specialities': all_specialities,'all_hosptials':all_hosptials,'all_doctors':all_doctors }
+    return render (request,'bookanappointment.html', context)
 
 def book(request):
     return redirect('/')
@@ -114,10 +121,6 @@ def function_book(request):
     
     context = { }
     return render (request,'bookanappointment.html', context)
-
-def book_an_appointment(request):
-    return render(request,'bookanappointment.html')
-
 
 
 def feedback_function(request):
