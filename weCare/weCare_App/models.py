@@ -38,6 +38,7 @@ class Patient(models.Model):
     password = models.CharField(max_length=45)
     gender = models.CharField(max_length=10)
     phone = models.CharField(max_length=15)
+    image = models.ImageField(upload_to='images/', null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = PatientManager()
@@ -46,7 +47,7 @@ class Feedback(models.Model):
     title = models.CharField(max_length=30)
     description = models.CharField(max_length=255)
     date = models.DateField()
-    patient = models.ForeignKey(Patient, related_name='feedback',on_delete=models.CASCADE,null=True)
+    patient = models.ForeignKey(Patient, related_name='feedback',on_delete=models.CASCADE, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -64,6 +65,7 @@ class Doctor(models.Model):
     password = models.CharField(max_length=45)
     phone = models.CharField(max_length=15)
     qualification = models.CharField(max_length=50)
+    image = models.ImageField(upload_to='images/', null=True)
     appointments = models.ManyToManyField(Patient, through='Appointment')
     title = models.CharField(max_length=255)
     speciality = models.ForeignKey(Speciality,related_name="doctor", on_delete=models.CASCADE)
@@ -75,7 +77,7 @@ class Appointment(models.Model):
     date = models.DateField()
     Time = models.TimeField()
     doctor = models.ForeignKey(Doctor,related_name='appointment', on_delete=models.CASCADE)
-    patient = models.ForeignKey(Patient,related_name='Patientppointment', on_delete=models.CASCADE)
+    patient = models.ForeignKey(Patient,related_name='Patientppointment', on_delete=models.CASCADE, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
