@@ -76,13 +76,17 @@ def loginPage(request):
     return redirect('/')
 
 def book_an_appointment(request):
+    patient = Patient.objects.get(id = request.session['id'])
     all_specialities =  Speciality.objects.all()
     all_hosptials = Hospital.objects.all()
     all_doctors = Doctor.objects.all()
-    print ("am here")
-    print( all_specialities)
-    context = {'all_specialities': all_specialities,'all_hosptials':all_hosptials,'all_doctors':all_doctors }
-    return render (request,'bookanappointment.html', context)
+    context = {
+        "user" : patient,
+        'all_specialities': all_specialities,
+        'all_hosptials':all_hosptials,
+        'all_doctors':all_doctors
+    }
+    return render(request,'bookanappointment.html',context)
 
 def book(request):
     return redirect('/')
@@ -104,23 +108,13 @@ def fetch_hospitals(request, doctor_id):
         return JsonResponse({'error': 'Doctor not found'}, status=404)
 def function_book(request):
     if "id" in request.session:
-        patient = Patient.objects.get(id = request.session['id'])
-        all_specialities =  Speciality.objects.all()
-        all_hosptials = Hospital.objects.all()
-        all_doctors = Doctor.objects.all()
-        print(all_doctors)
-        context = {
-            "user" : patient,
-            'all_specialities': all_specialities,
-            'all_hosptials':all_hosptials,
-            'all_doctors':all_doctors
-        }
-        return render(request,"feedBack.html", context)
+        
+        return redirect("feedBack.html")
     else:
         return redirect('/login')
     
-    context = { }
-    return render (request,'bookanappointment.html', context)
+    
+  
 
 
 def feedback_function(request):
