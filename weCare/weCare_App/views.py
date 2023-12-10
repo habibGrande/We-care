@@ -102,10 +102,6 @@ def fetch_hospitals(request, doctor_id):
         return JsonResponse({'error': 'Doctor not found'}, status=404)
 
 
-def book_an_appointment(request):
-    return render(request,'bookanappointment.html')
-
-
 
 def feedback_function(request):
     patient_id = request.session['id']
