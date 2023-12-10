@@ -1,99 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-      <title>Landing Page</title>
-      {% load static %}
-      <link rel="stylesheet" href="{% static '/style/bookanappointment.css' %}">
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Lato:wght@300;400;700&family=Merriweather+Sans:wght@400;800&family=Open+Sans&family=Playfair+Display:wght@400;900&family=Roboto&display=swap" rel="stylesheet">
-      <!-- Latest compiled and minified CSS -->
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-      <!-- Latest compiled JavaScript -->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Merriweather+Sans:wght@400;800&family=Open+Sans&family=Playfair+Display:wght@400;900&display=swap" rel="stylesheet">
-      <!-- Add icon library -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy6p5llPbS+rtJOf+83OUGpTIbrIuG4Ffe" crossorigin="anonymous">
-      <!-- CSS Files -->
-      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-      <!-- Bootstrap Datepicker CSS -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
-      <!-- Bootstrap Timepicker CSS -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.min.css">
-    </head>
-  <body>
-  <nav class="second-nav-bar navbar navbar-expand-lg sticky-top">
-      <div class="container-fluid">
-          <div class="platform-icon">
-              <span class="logo-text">We</span>
-              <img  class="second-nav-main-icon" src="{% static '/images/second-nav-icons/WecareLogo.png' %}" alt="" style="margin: 0px; padding: 0px;">
-              <span class="logo-text">Care</span>
-          </div>
-          <h1>Book an Appointment</h1>
-      </div>
-  </nav>
-  <div class="col-md-12 col-xs-12" style="background-color: #06B0C1; height: 20px; margin-bottom: 15px"></div>
-  <div class="container mt-5">
-    <form>
-      <div class="form-group">
-        <label for="specialityField">Speciality:</label>
-        <select class="form-control" id="specialityField" name="speciality">
-          <option value="cardiology">Cardiology</option>
-          <option value="neurology">Neurology</option>
-          <option value="orthopedics">Orthopedics</option>
-        </select>
-      </div>
-  
-      <div class="form-group">
-        <label for="doctorField">Doctor:</label>
-        <select class="form-control" id="doctorField" name="doctor">
-          <option value="doctor1">Doctor 1</option>
-          <option value="doctor2">Doctor 2</option>
-          <option value="doctor3">Doctor 3</option>
-        </select>
-      </div>
-      
-      <div class="form-group">
-        <label for="hospitalField">Hospital:</label>
-        <select class="form-control" id="hospitalField" name="hospital">
-          <option value="hospital1">Hospital 1</option>
-          <option value="hospital2">Hospital 2</option>
-          <option value="hospital3">Hospital 3</option>
-        </select>
-      </div>
-  
-      <div class="form-group">
-        <label for="dateField">Date:</label>
-        <input type="date" class="form-control" id="dateField" name="date">
-      </div>
-  
-      <div class="form-group">
-        <label for="timeField">Time:</label>
-        <input type="time" class="form-control timepicker" id="timeField" name="time">
-      </div>
-  
-      <button type="submit" class="btn btn-primary" style="background-color: #06B0C1;">Book</button>
-      <button type="submit" class="btn btn-primary" style="background-color: #06B0C1;">Reset</button>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
 
-    </form>
-  </div>
-  
-  <!-- Bootstrap JS and Popper.js (Optional) -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <!-- Bootstrap Datepicker JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-  <!-- Bootstrap Timepicker JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-eUHqVl5h4QlVM+5n5cDJ0WbB4lU8+FIR7IeZ1n6IAC5y2zT4bDRAx4z2I8FqHjNU" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'style/bookanappointment.css' %}?cache=1" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Lato:wght@300;400;700&family=Merriweather+Sans:wght@400;800&family=Open+Sans&family=Playfair+Display:wght@400;900&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- Bootstrap Datepicker CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+    />
+
+    <!-- Bootstrap Timepicker CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.min.css"
+    />
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  </head>
+  <body>
+    <nav class="second-nav-bar navbar navbar-expand-lg sticky-top">
+      <div class="container-fluid">
+        <a
+          class="platform-icon"
+          href="/"
+          style="text-decoration: none; color: #053d54"
+        >
+          <span class="logo-text">We</span>
+          <img
+            class="second-nav-main-icon"
+            src="{% static '/images/second-nav-icons/WecareLogo.png' %}"
+            alt=""
+            style="margin: 0px; padding: 0px"
+          />
+          <span class="logo-text">Care</span>
+        </a>
+        <h1>Book an Appointment</h1>
+      </div>
+    </nav>
+    <div
+      class="col-md-12 col-xs-12"
+      style="background-color: #06b0c1; height: 20px; margin-bottom: 15px"
+    ></div>
+    <div class="container mt-5">
+      <form action="/book">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="specialityField">Speciality:</label>
+          <select class="form-control" id="specialityField" name="speciality">
+            {% for speciality in all_specialities %}
+              <option value="{{ speciality.title }}">{{ speciality.title }}</option>
+            {% endfor %}
+          </select>
+        </div>        
+
+        <div class="form-group">
+          
+          <label for="doctorField">Doctor:</label>
+          <select class="form-control" id="doctorField" name="doctor">
+            {% for doctor in all_doctors %}
+                <option value="{{ doctor.id }}" data-speciality="{{doctor.speciality.title}}" class="hidden">{{doctor.first_name}} {{doctor.last_name}}</option>
+            {% endfor %}
+            
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="hospitalField">Hospital:</label>
+          <select class="form-control" id="hospitalField" name="hospital">
+              <!-- <option value="{{doctor.id}}" >Select a Hospital</option> -->
+          </select>
+      </div>
+
+        <div class="form-group">
+          <label for="dateField">Date:</label>
+          <input type="date" class="form-control" id="dateField" name="date"/>
+        </div>
+
+        <div class="form-group">
+          <label for="timeField">Time:</label>
+          <input
+            type="time"
+            class="form-control timepicker"
+            id="timeField"
+            name="time"
+          />
+        </div>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          style="background-color: #06b0c1; border: 1px solid #06b0c1" >
+          Book Now
+        </button>
+      </form>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js (Optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap Datepicker JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <!-- Bootstrap Timepicker JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    
+    <script src="{% static '/scripts/bookanappointment.js' %}?v=2.3"></script>
   </body>
 </html>

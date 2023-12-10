@@ -1,12 +1,25 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, HttpResponse
 from django.contrib import messages
 from .models import *
 import bcrypt
 
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.core.serializers import serialize
+from django.views.decorators.cache import never_cache
+
+def specialities(request):
+    return render(request,"specialities.html")
+
+def hospitals(request):
+    return render(request,"hospital.html")
+
+def doctors(request):
+    return render(request,"dr_page.html")
+# Create your views here.
 
 def root(request):
     return render(request, 'landingpage.html')
-
 
 def register_page(request):
     return render(request,'register.html')
@@ -61,9 +74,46 @@ def login(request):
     return redirect('/')
 
 def book_an_appointment(request):
-    return render (request,'bookanappointment.html')
+    all_specialities =  Speciality.objects.all()
+    all_hosptials = Hospital.objects.all()
+    all_doctors = Doctor.objects.all()
+    print(all_doctors)
+    context = {'all_specialities': all_specialities,'all_hosptials':all_hosptials,'all_doctors':all_doctors }
+    return render (request,'bookanappointment.html', context)
+
+def book(request):
+    return redirect('/')
 
 def logout(request):
     del request.session['id']
     return redirect("/")
 
+
+@never_cache
+def fetch_hospitals(request, doctor_id):
+    try:
+        print(doctor_id)
+        doctor = Doctor.objects.get(pk=doctor_id)
+        hospitals_of_selected_doctor = doctor.hospital.all()
+        return JsonResponse({'hospitals': serialize('json', hospitals_of_selected_doctor)})
+        # return JsonResponse({'doctor_id': doctor_id})
+    except Doctor.DoesNotExist:
+        return JsonResponse({'error': 'Doctor not found'}, status=404)
+
+
+def book_an_appointment(request):
+    return render(request,'bookanappointment.html')
+
+
+
+def feedback_function(request):
+    patient_id = request.session['id']
+    patient_obj = Patient.objects.get(id = patient_id)
+    feedBack = request.POST['feedback']
+    date = request.POST['date']
+    title = request.POST['title']
+    feedback = Feedback.objects.create(
+        patient = patient_obj,description = feedBack,title = title,date = date )
+    patient_obj.feedback.add(feedback)
+
+    return redirect('/feedback')
