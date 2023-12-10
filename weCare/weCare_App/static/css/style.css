@@ -61,7 +61,7 @@
 /* css for doc and hospital page */
 
 .w-100{
-    height: 800px;
+    height: 450px !important;
     margin-bottom: 30px;
 }
 
@@ -100,7 +100,7 @@
  } 
 
   .card-img-top{
-    height: 12vw !important;
+    height: 50vw !important;
     
  } 
 
