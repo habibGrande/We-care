@@ -12,7 +12,11 @@ def specialities(request):
     return render(request,"specialities.html")
 
 def hospitals(request):
-    return render(request,"hospital.html")
+    all_hospitals = Hospital.objects.all()
+    context ={
+        'all_hospitals':all_hospitals
+    }
+    return render(request,"hospital.html",context)
 
 def doctors(request):
     return render(request,"dr_page.html")
@@ -23,6 +27,7 @@ def root(request):
 
 def register_page(request):
     return render(request,'register.html')
+
 
 def register(request):
     errors = Patient.objects.basic_validator(request.POST)

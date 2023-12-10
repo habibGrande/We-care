@@ -109,21 +109,19 @@
          <!-- cards -->
          <div class="container text-center">
             <div class="row">
+              {%for hospital in all_hospitals%}
               <div class="col-md-4">
                 <div class="card">
                     <img src="static\img\440421306917582785344.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h3 class="card-title">Arab Evangelical Hospital</h3>
-                      <p class="card-text">The hospital includes several departments: 
-                        emergency, obstetrics and gynecology, children, men, 
-                        intensive care, operations, internal medicine, cardiology, 
-                        orthopedics, endocrinology, neurology, laboratory, radiology, and pharmacy.</p>
+                      <h3 class="card-title">{{hospital.name}}</h3>
+                      <p class="card-text">{{hospital.description}}</p>
                       <a href="/bookanappointment" class="btn btn-primary">Book Now</a>
                     </div>
                   </div>
               </div>
-
-              <div class="col-md-4">
+              {%endfor%}
+              <!-- <div class="col-md-4">
                 <div class="card">
                     <img src="static\img\hospital.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -155,7 +153,7 @@
                       <a href="/bookanappointment" class="btn btn-primary">Book Now</a>
                     </div>
                   </div>
-              </div>
+              </div> -->
 
             </div>
            </div>
