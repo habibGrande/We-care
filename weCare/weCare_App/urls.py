@@ -13,5 +13,9 @@ urlpatterns = [
     path('feedback/function',views.feedback_function),
     path('destroy', views.logout),
     path('login', views.login),
+    path('bookanappointment',views.book_an_appointment),
+    path('book',views.book),
+    path('api/fetch-hospitals/<int:doctor_id>', views.fetch_hospitals, name='fetch_hospitals'),
+
     path('bookanappointment',views.book_an_appointment)
 ]
