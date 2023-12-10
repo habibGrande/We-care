@@ -88,6 +88,14 @@ def book_an_appointment(request):
     }
     return render(request,'bookanappointment.html',context)
 
+
+def function_book(request):
+    if "id" in request.session:
+        
+        return redirect("feedBack.html")
+    else:
+        return redirect('/login')
+
 def book(request):
     return redirect('/')
 
