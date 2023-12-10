@@ -8,10 +8,18 @@ from django.views.decorators.csrf import csrf_exempt
 from django.core.serializers import serialize
 from django.views.decorators.cache import never_cache
 
+def specialities(request):
+    return render(request,"specialities.html")
+
+def hospitals(request):
+    return render(request,"hospital.html")
+
+def doctors(request):
+    return render(request,"dr_page.html")
+# Create your views here.
 
 def root(request):
     return render(request, 'landingpage.html')
-
 
 def register_page(request):
     return render(request,'register.html')
@@ -93,3 +101,19 @@ def fetch_hospitals(request, doctor_id):
         return JsonResponse({'error': 'Doctor not found'}, status=404)
 
 
+def book_an_appointment(request):
+    return render(request,'bookanappointment.html')
+
+
+
+def feedback_function(request):
+    patient_id = request.session['id']
+    patient_obj = Patient.objects.get(id = patient_id)
+    feedBack = request.POST['feedback']
+    date = request.POST['date']
+    title = request.POST['title']
+    feedback = Feedback.objects.create(
+        patient = patient_obj,description = feedBack,title = title,date = date )
+    patient_obj.feedback.add(feedback)
+
+    return redirect('/feedback')
