@@ -77,7 +77,8 @@ def book_an_appointment(request):
     all_specialities =  Speciality.objects.all()
     all_hosptials = Hospital.objects.all()
     all_doctors = Doctor.objects.all()
-    print(all_doctors)
+    print ("am here")
+    print( all_specialities)
     context = {'all_specialities': all_specialities,'all_hosptials':all_hosptials,'all_doctors':all_doctors }
     return render (request,'bookanappointment.html', context)
 
@@ -99,10 +100,6 @@ def fetch_hospitals(request, doctor_id):
         # return JsonResponse({'doctor_id': doctor_id})
     except Doctor.DoesNotExist:
         return JsonResponse({'error': 'Doctor not found'}, status=404)
-
-
-def book_an_appointment(request):
-    return render(request,'bookanappointment.html')
 
 
 

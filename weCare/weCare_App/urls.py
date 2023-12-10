@@ -1,6 +1,6 @@
+
 from django.urls import path, include
 from . import views
-
 urlpatterns = [
     path('specialities',views.specialities),
     path('hospitals',views.hospitals),
@@ -16,6 +16,4 @@ urlpatterns = [
     path('bookanappointment',views.book_an_appointment),
     path('book',views.book),
     path('api/fetch-hospitals/<int:doctor_id>', views.fetch_hospitals, name='fetch_hospitals'),
-
-    path('bookanappointment',views.book_an_appointment)
 ]
