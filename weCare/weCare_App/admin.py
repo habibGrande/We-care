@@ -10,5 +10,6 @@ admin.site.register(Speciality)
 admin.site.register(Appointment)
 admin.site.register(Location)
 admin.site.register(Hospital)
+admin.site.register(TimeSlot)
 
 

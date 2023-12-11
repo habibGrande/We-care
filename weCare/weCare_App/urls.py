@@ -17,6 +17,9 @@ urlpatterns = [
     path('function/book',views.function_book),
     path('book',views.book),
     path('api/fetch-hospitals/<int:doctor_id>', views.fetch_hospitals, name='fetch_hospitals'),
-    path('book_an_appointment',views.book_an_appointment)
+    path('api/fetch-dates/<int:doctor_id>/<int:hospital_id>', views.fetch_dates, name='fetch_dates'),
+    path('api/fetch-times/<int:date_id>', views.fetch_times, name='fetch_times'),
+    path('book_an_appointment',views.book_an_appointment),
+    path('appointment_booked_successfully',views.appointment_booked_successfully)
 
 ]

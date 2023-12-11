@@ -67,7 +67,7 @@
       style="background-color: #06b0c1; height: 20px; margin-bottom: 15px"
     ></div>
     <div class="container mt-5">
-      <form action="/book">
+      <form action="/book" method="post">
         {% csrf_token %}
         <div class="form-group">
           <label for="specialityField">Speciality:</label>
@@ -79,36 +79,36 @@
         </div>        
 
         <div class="form-group">
-          
           <label for="doctorField">Doctor:</label>
           <select class="form-control" id="doctorField" name="doctor">
+            <option value="" selected>--Select a Doctor--</option>
             {% for doctor in all_doctors %}
+            
                 <option value="{{ doctor.id }}" data-speciality="{{doctor.speciality.title}}" class="hidden">{{doctor.first_name}} {{doctor.last_name}}</option>
             {% endfor %}
-            
           </select>
         </div>
 
         <div class="form-group">
           <label for="hospitalField">Hospital:</label>
           <select class="form-control" id="hospitalField" name="hospital">
-              <!-- <option value="{{doctor.id}}" >Select a Hospital</option> -->
+              <option value="{{hospital.id}}" >--Select a Hospital--</option>
           </select>
-      </div>
+        </div>
 
         <div class="form-group">
           <label for="dateField">Date:</label>
-          <input type="date" class="form-control" id="dateField" name="date"/>
+          <select class="form-control" id="dateField" name="date">
+            <option value="" >--Select a Date--</option>
+        </select>
+          <!-- <input type="date" class="form-control" id="dateField" name="date"/> -->
         </div>
 
         <div class="form-group">
           <label for="timeField">Time:</label>
-          <input
-            type="time"
-            class="form-control timepicker"
-            id="timeField"
-            name="time"
-          />
+          <select class="form-control" id="timeField" name="time">
+            <option value="" >--Select a time--</option>
+          </select>
         </div>
         <button
           type="submit"
@@ -139,6 +139,6 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     
-    <script src="{% static '/scripts/bookanappointment.js' %}?v=2.3"></script>
+    <script src="{% static '/scripts/bookanappointment.js' %}?v=2.8"></script>
   </body>
 </html>
