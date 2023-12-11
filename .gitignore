@@ -1,3 +1,4 @@
+.gitignore
 weCare/images
 weCare/db.sqlite3
 weCare/weCare/__pycache__
