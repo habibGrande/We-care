@@ -41,7 +41,7 @@ def register(request):
         date = request.POST['bDate']
         img = request.POST['img']
         new_Patient = Patient.objects.create(
-            first_name = fName, last_name = lName, email = email, password = pw_hash,gender = gender, phone = phone, image = img )
+            first_name = fName, last_name = lName, email = email, password = pw_hash,gender = gender, phone = phone, image = img)
         request.session['id']  = new_Patient.id
         return redirect('/')
 
