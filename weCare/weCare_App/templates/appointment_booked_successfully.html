@@ -43,47 +43,31 @@
 </head>
 
 <body >
-    <!-- style="background-image: url('{% static '/images/test2.jpeg' %}');" -->
+    
+    <div class="conttainer">
+      <div class="confirmation-container text-center">
+        <h2>Appointment Booked Successfully</h2>
+    
+        <p class="thank-you">Dear {{request.session.patient_first_name}} {{request.session.patient_last_name}},</p>
+    
+        <p>Your appointment has been successfully booked with <span class="we-care">We Care</span> system. Here are the details:</p>
+    
+        <ul class="list-group">
+            <li class="list-group-item">Doctor: {{ request.session.doctor_first_name }} {{ request.session.doctor_last_name }}</li>
+            <li class="list-group-item">Hospital: {{ request.session.hospital_name }}</li>
+            <li class="list-group-item">Date: {{ request.session.booked_date }}</li>
+            <li class="list-group-item">Time: {{ request.session.booked_time }}</li>
+        </ul>
+    
+        <p>Thank you for choosing <span class="we-care">We Care</span>. If you have any questions, feel free to contact us.</p>
+    
+        <p>At <span class="we-care">We Care</span>, your health is our top priority. We're thrilled to be a part of your wellness journey. Remember, your well-being is the heartbeat of our commitment. Stay healthy, stay positive, and know that you are in caring hands. We're here for you every step of the way.</p>
 
-    <div>
-        <nav class="second-nav-bar navbar navbar-expand-lg sticky-top">
-            <div class="container-fluid">
-              <a
-                class="platform-icon"
-                href="/"
-                style="text-decoration: none; color: #053d54"
-              >
-                <span class="logo-text">We</span>
-                <img
-                  class="second-nav-main-icon"
-                  src="{% static '/images/second-nav-icons/WecareLogo.png' %}"
-                  alt=""
-                  style="margin: 0px; padding: 0px"
-                />
-                <span class="logo-text">Care</span>
-              </a>
-              <h1>Book an Appointment</h1>
-            </div>
-          </nav>
-        <div class="content-conatiner">
-            <h1>Appointment Booked Successfully</h1>
-            <h2>Dear {{request.session.patient_first_name}} {{request.session.patient_last_name}}</h2>
-            <p>Your appointment has been successfully booked with We Care system. Here are the details:</p>
-            <p><strong>Doctor:</strong> {{ request.session.doctor_first_name }} {{ request.session.doctor_last_name }}</p>
-            <p><strong>Hospital:</strong> {{ request.session.hospital_name }}</p>
-            <p><strong>Date:</strong> {{ request.session.booked_date }}</p>
-            <p><strong>Time:</strong> {{ request.session.booked_time }}</p>
-
-            <p>Thank you for choosing We Care. If you have any questions, feel free to contact us.</p>
-            <p>At We Care, your health is our top priority. We're thrilled to be a part of your wellness journey. Remember, your well-being is the heartbeat of our commitment.
-
-                Stay healthy, stay positive, and know that you are in caring hands. We're here for you every step of the way.
-                
-                Sending you warm wishes for good health and happiness.
-                
-                With care,
-                The We Care Team</p>
-        </div>
+        <a href="/" class="btn btn-primary">Go Back To We Care</a>
+    
+        <p class="signature">With care,<br>The We Care Team</p>
     </div>
+    </div>
+    
 </body>
 </html>

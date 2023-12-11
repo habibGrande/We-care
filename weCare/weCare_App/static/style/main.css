@@ -218,8 +218,8 @@ footer section .footer-social-media-right a {
 }
 
 .why-section .why-cards .why-card {
-    box-shadow: 5px 5px 15px 10px rgb(167,211,214);
-    border-radius: 10px!important;
+    /* box-shadow: 5px 5px 10px 10px rgb(167,211,214); */
+    /* border-radius: 10px!important; */
 }
 
 .float{
