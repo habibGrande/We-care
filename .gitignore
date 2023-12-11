@@ -1,6 +1,5 @@
-*.log
-*.pot
-*.pyc
-pycache
-db.sqlite3
-media
+.gitignore
+weCare/db.sqlite3
+weCare/weCare/pycache
+weCare/weCare_App/pycache
+weCare/weCare_App/migrations

@@ -9,12 +9,18 @@ from django.core.serializers import serialize
 from django.views.decorators.cache import never_cache
 
 def specialities(request):
+    all_specialities = Speciality.objects.all()
+    context = {'all_specialities':all_specialities}
     return render(request,"specialities.html")
 
 def hospitals(request):
+    all_hosptials = Hospital.objects.all()
+    context = {'all_hosptials':all_hosptials}
     return render(request,"hospital.html")
 
 def doctors(request):
+    all_doctors = Doctor.objects.all()
+    context = {'all_doctors':all_doctors}
     return render(request,"dr_page.html")
 # Create your views here.
 
