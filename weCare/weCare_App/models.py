@@ -36,7 +36,7 @@ class Patient(models.Model):
     password = models.CharField(max_length=45)
     gender = models.CharField(max_length=10)
     phone = models.CharField(max_length=15)
-    image = models.ImageField(upload_to='images/', null=True)
+    image = models.ImageField(upload_to='static/images/', null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = PatientManager()
