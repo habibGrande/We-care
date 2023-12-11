@@ -16,7 +16,6 @@ def hospitals(request):
 
 def doctors(request):
     return render(request,"dr_page.html")
-# Create your views here.
 
 def root(request):
     return render(request, 'landingpage.html')
@@ -57,6 +56,7 @@ def feedBack(request):
 def login(request):
      return render(request,'login.html')
 
+
 def loginPage(request):
     errors = Patient.objects.login_validator(request.POST)
     if len(errors) > 0:
@@ -74,6 +74,7 @@ def loginPage(request):
     else:
         messages.error(request,"Patient is not Exist")
     return redirect('/')
+    
 
 def book_an_appointment(request):
     patient = Patient.objects.get(id = request.session['id'])
@@ -84,7 +85,7 @@ def book_an_appointment(request):
         "user" : patient,
         'all_specialities': all_specialities,
         'all_hosptials':all_hosptials,
-        'all_doctors':all_doctors
+        'all_doctors':all_doctors,
     }
     return render(request,'bookanappointment.html',context)
 
@@ -97,12 +98,53 @@ def function_book(request):
         return redirect('/login')
 
 def book(request):
-    return redirect('/')
+    if request.method == 'POST':
+        speciality = request.POST['speciality']
+        doctor_id = request.POST['doctor']
+        doctor_object = Doctor.objects.get(id=doctor_id)
+        request.session['doctor_first_name'] = doctor_object.first_name
+        request.session['doctor_last_name'] = doctor_object.last_name
+        hospital_id = request.POST['hospital']
+        hospital_object = Hospital.objects.get(id=hospital_id)
+        request.session['hospital_name'] = hospital_object.name
+        date_id = request.POST['date']
+        date_object = TimeSlot.objects.get(id=date_id)
+        request.session['booked_date'] =  date_object.date.strftime('%Y-%m-%d')
+        time_id = request.POST['time']
+        time_object = TimeSlot.objects.get(id=time_id)
+        request.session['booked_time'] =  time_object.time.strftime('%H:%M:%S')
+        patient_id = request.session['id']
+        patient_object = Patient.objects.get(id=patient_id)
+        request.session['patient_first_name'] = patient_object.first_name
+        request.session['patient_last_name'] =  patient_object.last_name
+        #create appointment
+        created_appointment = Appointment.objects.create(
+            date=date_object.date,
+            time=time_object.time,
+            doctor=doctor_object,
+            hospital=hospital_object,
+            patient=patient_object
+        )
+        # Update the time_object is_available value to False
+        time_object.is_available = False
+        time_object.save()
+
+    return redirect('/appointment_booked_successfully')
+
+def appointment_booked_successfully(request):
+    return render(request,'appointment_booked_successfully.html')
+
 
 def logout(request):
     del request.session['id']
     return redirect("/")
 
+def function_book(request):
+    if "id" in request.session:
+        
+        return redirect('/book_an_appointment')
+    else:
+        return redirect('/login')
 
 @never_cache
 def fetch_hospitals(request, doctor_id):
@@ -114,17 +156,29 @@ def fetch_hospitals(request, doctor_id):
         # return JsonResponse({'doctor_id': doctor_id})
     except Doctor.DoesNotExist:
         return JsonResponse({'error': 'Doctor not found'}, status=404)
-def function_book(request):
-    if "id" in request.session:
-        
-        return redirect("feedBack.html")
-    else:
-        return redirect('/login')
-    
-    
+
+@never_cache
+def fetch_dates(request, doctor_id, hospital_id):
+    try:
+        doctor = Doctor.objects.get(id=doctor_id)
+        hospital = Hospital.objects.get(id=hospital_id)
+        dates_of_selected_doctor_and_hospital = TimeSlot.objects.filter(doctor=doctor,hospital=hospital)
+        print(dates_of_selected_doctor_and_hospital)
+        return JsonResponse({'available_dates': serialize('json', dates_of_selected_doctor_and_hospital)})
+    except Doctor.DoesNotExist:
+        return JsonResponse({'error': 'No available dates found'}, status=404)
+
+@never_cache
+def fetch_times(request, date_id):
+    try:
+        date = TimeSlot.objects.get(id=date_id)
+        date_value = date.date
+        time_slots_of_this_date = TimeSlot.objects.filter(date= date_value,  is_available=True)
+        print(time_slots_of_this_date)
+        return JsonResponse({'available_times': serialize('json',time_slots_of_this_date )})
+    except Doctor.DoesNotExist:
+        return JsonResponse({'error': 'No available dates found'}, status=404)
   
-
-
 def feedback_function(request):
     patient_id = request.session['id']
     patient_obj = Patient.objects.get(id = patient_id)
@@ -132,7 +186,7 @@ def feedback_function(request):
     date = request.POST['date']
     title = request.POST['title']
     feedback = Feedback.objects.create(
-        patient = patient_obj,description = feedBack,title = title,date = date )
+    patient = patient_obj,description = feedBack,title = title,date = date )
     patient_obj.feedback.add(feedback)
-
     return redirect('/feedback')
+

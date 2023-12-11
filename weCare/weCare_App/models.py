@@ -29,8 +29,6 @@ class PatientManager(models.Manager):
             errors['password'] = "Password should be at least 8 characters!"
         return errors
 
-
-
 class Patient(models.Model):
     first_name = models.CharField(max_length=45)
     last_name = models.CharField(max_length=45)
@@ -72,15 +70,6 @@ class Doctor(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-
-class Appointment(models.Model):
-    date = models.DateField()
-    Time = models.TimeField()
-    doctor = models.ForeignKey(Doctor,related_name='appointment', on_delete=models.CASCADE)
-    patient = models.ForeignKey(Patient,related_name='Patientppointment', on_delete=models.CASCADE, null=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
 class Location(models.Model):
     street = models.CharField(max_length=50)
     city= models.CharField(max_length=50)
@@ -88,9 +77,7 @@ class Location(models.Model):
     country = models.CharField(max_length=50)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    
 
-    
 class Hospital(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=255)
@@ -100,6 +87,28 @@ class Hospital(models.Model):
     location = models.ForeignKey(Location,related_name='hospital',on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+class Appointment(models.Model):
+    date = models.DateField()
+    time = models.TimeField()
+    doctor = models.ForeignKey(Doctor, related_name='doctor_appointments', on_delete=models.CASCADE)
+    hospital = models.ForeignKey(Hospital, related_name='hospital_appointments', on_delete=models.CASCADE, null=True)
+    patient = models.ForeignKey(Patient, related_name='patient_appointments', on_delete=models.CASCADE, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+class TimeSlot(models.Model):
+    doctor = models.ForeignKey(Doctor, related_name='doctor_available_dates', on_delete=models.CASCADE)
+    hospital  = models.ForeignKey(Hospital, related_name='hospital_available_dates', on_delete=models.CASCADE, null=True)
+    date = models.DateField()
+    time = models.TimeField()
+    is_available = models.BooleanField(default=True)
+
+
+    
+
+    
+
 
 
 
