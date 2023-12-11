@@ -1,8 +1,16 @@
-* {
-    font-family: 'Lato', sans-serif;
+* { 
+    font-family: 'Playfair Display', serif;
+    box-sizing: border-box;
     margin:0;
     padding:0;
-    box-sizing: border-box;
+   
+}
+
+.logo-text {
+    color:  #204E63;
+    font-size: 18px;
+    padding: 0px;
+    margin: 0px;
 }
   
   .btn-outline-success{
@@ -42,7 +50,7 @@
   }
   
   .second-nav-bar ul li a {
-      color: #204E63;
+      color: #063d54 !important;
   }
   
   .second-nav-icon {

@@ -1,5 +1,8 @@
 *{
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Playfair Display', serif;
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
   }
   
   .btn-outline-success{
@@ -46,10 +49,10 @@
   
   }
   
-  .slider-img {
+  /* .slider-img {
       width: 100vw;
       height: 25vw;
-  }
+  } */
 
   
 .countenir{
@@ -110,4 +113,3 @@
 .text-center{
     margin-top: 20px !important;
 }
-
