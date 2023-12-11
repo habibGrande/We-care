@@ -51,14 +51,17 @@
                     </a>
                 </li>                
               </ul>
-              <form class="d-flex">
-                  <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
-              
-            <form action="/logout">   
-            <button>logout</button>
-        </form>
+              {% if id in request.session %}
+                <form action="/logout" method="post">   
+                    <button class="btn btn-light">>Log Out</button>
+                </form>  
+              {% else %}  
+                <form action="/login" method="post">   
+                    <button class="btn btn-light">Log in</button>
+                </form>
+              {% endif %}
+          
+     
           </div>
       </div>
   </nav>
