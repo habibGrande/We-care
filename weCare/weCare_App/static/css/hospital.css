@@ -46,10 +46,10 @@
   
   }
   
-  .slider-img {
+  /* .slider-img {
       width: 100vw;
       height: 25vw;
-  }
+  } */
 
   
 .countenir{
@@ -110,4 +110,3 @@
 .text-center{
     margin-top: 20px !important;
 }
-

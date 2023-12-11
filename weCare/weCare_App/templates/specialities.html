@@ -95,21 +95,19 @@
           </div>
         </div>
       </div>
-    
+
+    <!-- links -->
     <div class="container text-center">
 
         <h1>Specialities</h1>
 
         <div class="row">
+          {%for specialities in all_specialities%}
           <div class="col-md-3">
-            <p><a class="link-opacity-10-hover" href="#">Anaesthesiology</a></p>
-            <p><a class="link-opacity-25-hover" href="#">Dentistry</a></p>
-            <p><a class="link-opacity-50-hover" href="#">Cardiac Surgery</a></p>
-            <p><a class="link-opacity-75-hover" href="#">Gastroenterology–Surgical</a></p>
-            <p><a class="link-opacity-100-hover" href="#">General Surgery</a></p>
+            <p><a class="link-opacity-10-hover" href="#">{{specialities.title}}</a></p>
           </div>
-
-          <div class="col-md-3">
+          {%endfor%}
+          <!-- <div class="col-md-3">
             <p><a class="link-opacity-10-hover" href="#">Lab Medicine</a></p>
             <p><a class="link-opacity-25-hover" href="#">Woman & Child Institute</a></p>
             <p><a class="link-opacity-50-hover" href="#">Arthroscopy & Sports Medicine</a></p>
@@ -195,7 +193,7 @@
             <p><a class="link-opacity-50-hover" href="#">Dietetics & Nutrition</a></p>
             <p><a class="link-opacity-75-hover" href="#">Haematology</a></p>
             <p><a class="link-opacity-100-hover" href="#">Paediatric Surgery</a></p>
-          </div>
+          </div> -->
 
         </div>
       </div>
