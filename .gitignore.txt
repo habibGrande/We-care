@@ -1,6 +1,0 @@
-*.log
-*.pot
-*.pyc
-pycache
-db.sqlite3
-media
