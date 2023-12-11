@@ -61,7 +61,7 @@ def feedBack(request):
             "user" : patient
         }
         return render(request, "feedBack.html", context)
-    return redirect('/')
+    return redirect('/login')
 
 def login(request):
      return render(request,'login.html')
