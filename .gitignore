@@ -1,6 +1,0 @@
-.gitignore
-weCare/images
-weCare/db.sqlite3
-weCare/weCare/__pycache__
-weCare/weCare_App/__pycache__
-weCare/weCare_App/migrations
