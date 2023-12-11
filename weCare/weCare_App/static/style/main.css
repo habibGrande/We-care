@@ -218,8 +218,8 @@ footer section .footer-social-media-right a {
 }
 
 .why-section .why-cards .why-card {
-    box-shadow: 5px 5px 15px 10px rgb(167,211,214);
-    border-radius: 10px!important;
+    /* box-shadow: 5px 5px 10px 10px rgb(167,211,214); */
+    /* border-radius: 10px!important; */
 }
 
 .float{
@@ -240,3 +240,26 @@ footer section .footer-social-media-right a {
 .my-float{
 	margin-top:16px;
 }
+
+/* .special-paragraph {
+    display: inline-block;
+    background: #00000029;
+    line-height: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+    padding: 0px 10px;
+    border-radius: 8px;
+    color:#315B6F;
+    background: #b5dde4;
+}
+.red {
+    color: red;
+}
+.black {
+    color: black;
+}
+.green {
+    color: green;
+}
+.white {
+    color: white;
+} */

@@ -10,7 +10,7 @@
 
     <!-- Custom CSS -->
     {% load static%}
-    <link rel="stylesheet" href="{% static 'style/bookanappointment.css' %}?cache=1" />
+    <link rel="stylesheet" href="{% static 'style/bookanappointment.css' %}?cache=1.1" />
 
     <!-- Google Fonts -->
     <link
@@ -43,19 +43,19 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   </head>
   <body>
-    <nav class="second-nav-bar navbar navbar-expand-lg sticky-top">
-      <div class="container-fluid">
+    <nav class="second-nav-bar navbar navbar-expand-lg">
+      <div class="container-fluid nav-bar">
         <a
           class="platform-icon"
           href="/"
-          style="text-decoration: none; color: #053d54"
+          style="text-decoration: none; color: #053d54; position: absolute;"
         >
           <span class="logo-text">We</span>
           <img
             class="second-nav-main-icon"
             src="{% static '/images/second-nav-icons/WecareLogo.png' %}"
             alt=""
-            style="margin: 0px; padding: 0px"
+            style="margin: 0px; padding: 0px;"
           />
           <span class="logo-text">Care</span>
         </a>
@@ -66,59 +66,68 @@
       class="col-md-12 col-xs-12"
       style="background-color: #06b0c1; height: 20px; margin-bottom: 15px"
     ></div>
-    <div class="container mt-5">
-      <form action="/book" method="post">
-        {% csrf_token %}
-        <div class="form-group">
-          <label for="specialityField">Speciality:</label>
-          <select class="form-control" id="specialityField" name="speciality">
-            {% for speciality in all_specialities %}
-              <option value="{{ speciality.title }}">{{ speciality.title }}</option>
-            {% endfor %}
-          </select>
-        </div>        
 
-        <div class="form-group">
-          <label for="doctorField">Doctor:</label>
-          <select class="form-control" id="doctorField" name="doctor">
-            <option value="" selected>--Select a Doctor--</option>
-            {% for doctor in all_doctors %}
-            
-                <option value="{{ doctor.id }}" data-speciality="{{doctor.speciality.title}}" class="hidden">{{doctor.first_name}} {{doctor.last_name}}</option>
-            {% endfor %}
-          </select>
-        </div>
+    <div class="conttainer">
+      <div class="main-container">
+        <div class="container mt-5">
+          <form action="/book" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="specialityField">Speciality:</label>
+              <select class="form-control" id="specialityField" name="speciality">
+                <option value="" selected>--Select a Speciality--</option>
 
-        <div class="form-group">
-          <label for="hospitalField">Hospital:</label>
-          <select class="form-control" id="hospitalField" name="hospital">
-              <option value="{{hospital.id}}" >--Select a Hospital--</option>
-          </select>
+                {% for speciality in all_specialities %}
+                  <option value="{{ speciality.title }}">{{ speciality.title }}</option>
+                {% endfor %}
+              </select>
+            </div>        
+    
+            <div class="form-group">
+              <label for="doctorField">Doctor:</label>
+              <select class="form-control" id="doctorField" name="doctor">
+                <option value="" selected>--Select a Doctor--</option>
+                {% for doctor in all_doctors %}
+                
+                    <option value="{{ doctor.id }}" data-speciality="{{doctor.speciality.title}}" class="hidden">{{doctor.first_name}} {{doctor.last_name}}</option>
+                {% endfor %}
+              </select>
+            </div>
+    
+            <div class="form-group">
+              <label for="hospitalField">Hospital:</label>
+              <select class="form-control" id="hospitalField" name="hospital">
+                  <option value="{{hospital.id}}" >--Select a Hospital--</option>
+              </select>
+            </div>
+    
+            <div class="form-group">
+              <label for="dateField">Date:</label>
+              <select class="form-control" id="dateField" name="date">
+                <option value="" >--Select a Date--</option>
+            </select>
+              <!-- <input type="date" class="form-control" id="dateField" name="date"/> -->
+            </div>
+    
+            <div class="form-group">
+              <label for="timeField">Time:</label>
+              <select class="form-control" id="timeField" name="time">
+                <option value="" >--Select a Time--</option>
+              </select>
+            </div>
+            <button
+              type="submit"
+              class="btn btn-primary"
+              style="background-color: #06b0c1; border: 1px solid #06b0c1" >
+              Book Now
+            </button>
+          </form>
         </div>
-
-        <div class="form-group">
-          <label for="dateField">Date:</label>
-          <select class="form-control" id="dateField" name="date">
-            <option value="" >--Select a Date--</option>
-        </select>
-          <!-- <input type="date" class="form-control" id="dateField" name="date"/> -->
-        </div>
-
-        <div class="form-group">
-          <label for="timeField">Time:</label>
-          <select class="form-control" id="timeField" name="time">
-            <option value="" >--Select a time--</option>
-          </select>
-        </div>
-        <button
-          type="submit"
-          class="btn btn-primary"
-          style="background-color: #06b0c1; border: 1px solid #06b0c1" >
-          Book Now
-        </button>
-      </form>
+    
     </div>
-
+    </div>
+    
+    
     <!-- Bootstrap JS and Popper.js (Optional) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
