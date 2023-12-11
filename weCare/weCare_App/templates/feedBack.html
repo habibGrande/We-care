@@ -37,12 +37,12 @@
                 <img  class="second-nav-main-icon" src="{% static '/images/second-nav-icons/WecareLogo.png' %}" alt="" style="margin: 0px; padding: 0px;">
                 <span class="logo-text">Care</span>
             </a>
-            <h1>Book an Appointment</h1>
+            <h1>We Care</h1>
         </div>
     </nav>
     <div class="col-md-12 col-xs-12" style="background-color: #06B0C1; height: 20px; margin-bottom: 15px"></div>
     <div class="container d-flex justify-content-center">
-        <h3>Hello username please enter your feedback</h3>
+        <h3>Hello {{user.first_name}} {{user.last_name}} please enter your feedback</h3>
     </div>
     <div class="container d-flex justify-content-center">
         <p class="">We strive to improve the quality of care and value the suggestions of our customers.</p>
@@ -55,15 +55,16 @@
             {% csrf_token %}
            <div class="row">
                 <div class=" d-flex justify-content-center">
-                    <div class="col-sm-4 col-md-6 col-lg-2 mt-3">
-                        <label for="date">Date: </label>
-                        <input type="date" name="date" class="form-control"id="">
-                    </div>
                     <div >
                         <div class="col-sm-4 col-md-6 col-lg-10 mt-5">
                             <input type="text" class="form-control" name="title" id="" placeholder="Title">
                         </div>
                     </div>
+                    <div class="col-sm-4 col-md-6 col-lg-2 mt-3">
+                        <label for="date">Date: </label>
+                        <input type="date" name="date" class="form-control"id="">
+                    </div>
+                  
                 </div>
            </div>
            <div class="row">

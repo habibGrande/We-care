@@ -18,7 +18,11 @@ def doctors(request):
     return render(request,"dr_page.html")
 
 def root(request):
-    return render(request, 'landingpage.html')
+    patient = Patient.objects.all()
+    context = {
+        'patients' : patient
+    }
+    return render(request, 'landingpage.html', context )
 
 def register_page(request):
     return render(request,'register.html')
@@ -40,8 +44,7 @@ def register(request):
         conPassword = request.POST['confrim_password']
         date = request.POST['bDate']
         img = request.POST['img']
-        new_Patient = Patient.objects.create(
-            first_name = fName, last_name = lName, email = email, password = pw_hash,gender = gender, phone = phone, image = img)
+        new_Patient = Patient.objects.create(first_name = fName, last_name = lName, email = email, password = pw_hash,gender = gender, phone = phone, pic = img)
         request.session['id']  = new_Patient.id
         return redirect('/')
 
@@ -53,6 +56,7 @@ def feedBack(request):
         }
         return render(request, "feedBack.html", context)
     return redirect('/')
+
 def login(request):
      return render(request,'login.html')
 
