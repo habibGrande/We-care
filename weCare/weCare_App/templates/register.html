@@ -38,7 +38,7 @@
                 <img  class="second-nav-main-icon" src="{% static '/images/second-nav-icons/WecareLogo.png' %}" alt="" style="margin: 0px; padding: 0px;">
                 <span class="logo-text">Care</span>
             </a>
-            <h1>Book an Appointment</h1>
+            <h1>We Care</h1>
         </div>
     </nav>
     <div class="col-md-12 col-xs-12" style="background-color: #06B0C1; height: 20px; margin-bottom: 15px"></div>
@@ -80,15 +80,23 @@
                         <label>Birthday:</label>
                         <input type="date"  class="form-control mt-2" name="bDate">
                     </div>
-                    <div class="col-sm-4 col-md-6 col-lg-6 mt-3">
+                    <div class="col-sm-6 col-md-6 col-lg-6 mt-3">
                         <label >Gender: </label>
                         <div class="form-control mt-2">
-                        
-                            <label class="form-check-label"> Male</label>
-                            <input type="radio" class="form-check-input ms-lg-1" name="gender" id="" value="male">
-                            <label class="form-check-label ms-lg-4 "> Female</label>
-                            <input type="radio" class="form-check-input ms-lg-2 " name="gender" id=""value="female">
+                                <input type="radio" class="form-check-input ms-lg-1" name="gender" id="male" value="male">
+                                <label class="form-check-label ms-lg-4" for="male"> Male</label>
+                                <input type="radio" class="form-check-input ms-lg-1 " name="gender" id="female"value="female">
+                                <label class="form-check-label  ms-lg-4 " for="female"> Female</label>
                         </div>
+                    </div>
+                    <div class="col-sm-8 col-md-12 col-lg-10 mt-3">
+                        {% if messages %}
+                        <ul class="list-group messages">    
+                            {% for message in messages %}    
+                                <li {% if message.tags %} class="list-group-item list-group-item-warning mt-2 {{ message.tags }}"{% endif %}>{{ message }}</li>    
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
                     </div>
                 </div>
                 <div class="d-grid gap-4 col-sm-8 col-md-12 col-lg-4 mt-3 ">

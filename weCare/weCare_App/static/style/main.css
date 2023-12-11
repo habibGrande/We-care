@@ -240,3 +240,10 @@ footer section .footer-social-media-right a {
 .my-float{
 	margin-top:16px;
 }
+ /* added by habib */
+.link-color{
+    color: darkblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

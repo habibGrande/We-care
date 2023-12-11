@@ -51,14 +51,17 @@
                     </a>
                 </li>                
               </ul>
-              <form class="d-flex">
-                  <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
-              
-            <form action="/logout">   
-            <button>logout</button>
-        </form>
+              {% if id in request.session %}
+                <form action="/logout" method="post">   
+                    <button class="btn btn-light">>Log Out</button>
+                </form>  
+              {% else %}  
+                <form action="/login" method="post">   
+                    <button class="btn btn-light">Log in</button>
+                </form>
+              {% endif %}
+          
+     
           </div>
       </div>
   </nav>
@@ -282,13 +285,14 @@
       <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="10000">
           <div class="cards-wrapper">
+            {% for patient in patients %}
             <div class="card">
-              <div class="image-wrapper d-flex justify-content-center align-items-center">
-                <img  class="p-img img-fluid" src="{% static '/images/patient-ex-images/p1.avif' %}"  alt="...">
-              </div>
+           
+              
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h3>{{patient.patient.first_name}}</h3>
+                <h5 class="card-title">{{patient.title}}</h5>
+                <p class="card-text">{{patient.description}}</p>
                 <div class="rating-stars">
                   <span class="fa fa-star checked"></span>
                   <span class="fa fa-star checked"></span>
@@ -297,142 +301,10 @@
                   <span class="fa fa-star checked"></span>
                 </div>
               </div>
+             
             </div>
-            <div class="card">
-              <div class="image-wrapper d-flex justify-content-center align-items-center">
-                <img class="p-img img-fluid" src="{% static '/images/patient-ex-images/p2.avif' %}"  alt="...">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div class="rating-stars">
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="image-wrapper d-flex justify-content-center align-items-center">
-                <img class="p-img img-fluid" src="{% static '/images/patient-ex-images/p3.avif' %}" alt="...">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div class="rating-stars">
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item" data-bs-interval="2000">
-          <div class="cards-wrapper">
-            <div class="card">
-              <div class="image-wrapper d-flex justify-content-center align-items-center">
-                <img class="p-img img-fluid" src="{% static '/images/patient-ex-images/p4.avif' %}" alt="...">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div class="rating-stars">
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="image-wrapper d-flex justify-content-center align-items-center">
-                <img class="p-img img-fluid" src="{% static '/images/patient-ex-images/p5.avif' %}" alt="...">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div class="rating-stars">
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="image-wrapper d-flex justify-content-center align-items-center">
-                <img class="p-img img-fluid" src="{% static '/images/patient-ex-images/p2.avif' %}" alt="...">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div class="rating-stars">
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="cards-wrapper">
-            <div class="card">
-              <div class="image-wrapper d-flex justify-content-center align-items-center">
-                <img class="p-img img-fluid" src="{% static '/images/patient-ex-images/p2.avif' %}" alt="...">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div class="rating-stars">
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star"></span>
-                  <span class="fa fa-star"></span>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="image-wrapper d-flex justify-content-center align-items-center">
-                <img class="p-img img-fluid" src="{% static '/images/patient-ex-images/p2.avif' %}" alt="...">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div class="rating-stars">
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star"></span>
-                  <span class="fa fa-star"></span>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="image-wrapper d-flex justify-content-center align-items-center">
-                <img class="p-img img-fluid" src="{% static '/images/patient-ex-images/p2.avif' %}" alt="...">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div class="rating-stars">
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star"></span>
-                  <span class="fa fa-star"></span>
-                </div>
-              </div>
+            {% endfor %}
+
             </div>
           </div>
         </div>
