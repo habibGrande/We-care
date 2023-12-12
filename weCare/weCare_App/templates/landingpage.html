@@ -52,11 +52,13 @@
                 </li>                
               </ul>
               {% if id in request.session %}
-                <form action="/logout" method="post">   
+                <form action="/logout" method="post"> 
+                  {% csrf_token %}  
                     <button class="btn btn-light">>Log Out</button>
                 </form>  
               {% else %}  
-                <form action="/login" method="post">   
+                <form action="/login" method="post"> 
+                  {% csrf_token %}  
                     <button class="btn btn-light">Log in</button>
                 </form>
               {% endif %}
