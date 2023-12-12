@@ -127,3 +127,7 @@ a {
 .container{
     max-width: 100% !important;
 }
+
+footer section .footer-social-media-right a {
+    text-decoration: none;
+}
