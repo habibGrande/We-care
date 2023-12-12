@@ -124,3 +124,6 @@
     margin-top: 20px !important;
 }
 
+footer section .footer-social-media-right a {
+    text-decoration: none;
+}
